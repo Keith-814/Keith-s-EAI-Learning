@@ -23,9 +23,27 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
       - name: Build Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --trace
+        shell: bash
+        run: |
+          set -o pipefail
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --trace 2>&1 | tee "$RUNNER_TEMP/jekyll-build.log"
         env:
           JEKYLL_ENV: production
+      - name: Report build error
+        if: failure()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/jekyll-build.log" ]; then
+            python3 - <<'PY'
+          import os
+          from pathlib import Path
+          log = Path(os.environ['RUNNER_TEMP'], 'jekyll-build.log').read_text(errors='replace')
+          message = log[-16000:].replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+          print(f'::error title=Jekyll build output::{message}')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('### Jekyll 构建错误\n\n```text\n' + log[-16000:] + '\n```\n')
+          PY
+          fi
       - name: Check site links and assets
         run: python3 scripts/check_site.py
       - uses: actions/upload-pages-artifact@v3
