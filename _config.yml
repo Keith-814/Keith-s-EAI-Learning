@@ -1,0 +1,62 @@
+name: "Keith · EAI Learning"
+description: "具身智能学习与研究笔记"
+lang: zh-CN
+timezone: Asia/Shanghai
+url: "https://keith-814.github.io"
+baseurl: "/Keith-s-EAI-Learning"
+repository: "Keith-814/Keith-s-EAI-Learning"
+source_repository: "https://github.com/TingdeLiu/tingdeliu.github.io"
+avatar: "/assets/robot.svg"
+favicon: "/Keith-s-EAI-Learning/assets/robot.svg"
+future: true
+collections:
+  translations:
+    output: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: zh-CN
+navigation:
+  - name: 首页
+    url: /
+  - name: 研究
+    url: /research/
+  - name: 时间线
+    url: /timeline/
+  - name: 学习记录
+    url: /blog/
+  - name: 关于
+    url: /about/
+footer-links:
+  github: Keith-814
+research_featured: vla-survey
+excerpt_separator: "<!-- more -->"
+permalink: /:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+sass:
+  style: compressed
+  sourcemap: never
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - AGENTS.md
+  - LICENSE
+  - LICENSE-CONTENT
+  - THIRD_PARTY_NOTICES.md
+  - docs
+  - scripts
+  - templates
+  - .bundle

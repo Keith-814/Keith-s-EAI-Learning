@@ -1,0 +1,18 @@
+[
+  {
+    "id": "vla",
+    "zh": "VLA · 动作策略",
+    "en": "VLA",
+    "slugs": [
+      "VLA-Survey"
+    ]
+  },
+  {
+    "id": "world",
+    "zh": "世界模型",
+    "en": "World Models",
+    "slugs": [
+      "World-Models-Survey"
+    ]
+  }
+]

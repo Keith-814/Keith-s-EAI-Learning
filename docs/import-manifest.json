@@ -1,0 +1,487 @@
+{
+  "imported_at": "2026-11-09",
+  "source_repository": "https://github.com/TingdeLiu/tingdeliu.github.io",
+  "source_revision": "969637c4346766db02c3edcf7ff550f5dd15fb95",
+  "articles": [
+    {
+      "path": "_posts/research/2026-01-24-VLA-Survey.md",
+      "original_url": "https://tingdeliu.github.io/VLA-Survey/"
+    },
+    {
+      "path": "_posts/research/2026-04-16-World-Models-Survey.md",
+      "original_url": "https://tingdeliu.github.io/World-Models-Survey/"
+    }
+  ],
+  "images": [
+    {
+      "path": "/images/vla/LingBot-World-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/LingBot-World-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/LingBot-World-memory-capability.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/LingBot-World-memory-capability.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/LingBot-World-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/LingBot-World-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/LingBot-World-promptable-events.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/LingBot-World-promptable-events.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/LingBot-World-training-pipeline.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/LingBot-World-training-pipeline.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/openvla_approach.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/openvla_approach.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/oxe_figure.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/oxe_figure.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vla/vla-survey-intro.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vla/vla-survey-intro.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vlm/Janus-Pro-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vlm/Janus-Pro-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vlm/Janus-Pro-performance.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vlm/Janus-Pro-performance.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vlm/Janus-Pro-qualitative.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vlm/Janus-Pro-qualitative.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Diffusion-Video-Architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Diffusion-Video-Architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Image2Sim-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Image2Sim-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Image2Sim-pipeline-comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Image2Sim-pipeline-comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Implicit-vs-Explicit-Models.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Implicit-vs-Explicit-Models.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/NavWAM-architecture-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/NavWAM-architecture-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/NavWAM-concept-comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/NavWAM-concept-comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/NavWAM-real-world-rollouts.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/NavWAM-real-world-rollouts.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Robot-Video-Gen-Overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Robot-Video-Gen-Overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/Robot-Video-Gen-Taxonomy.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/Robot-Video-Gen-Taxonomy.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/WAM-Nav-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/WAM-Nav-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/motus-architecture-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/motus-architecture-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/motus-latent-action-vae.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/motus-latent-action-vae.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/motus-real-world-tasks.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/motus-real-world-tasks.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/vln/motus-robotwin-results.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/vln/motus-robotwin-results.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/3d-as-code.jpg",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/3d-as-code.jpg",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/AIM-framework.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/AIM-framework.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/AIM-task-execution.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/AIM-task-execution.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/AIM-typical-vs-ours.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/AIM-typical-vs-ours.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Platform-Components.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Platform-Components.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Predict1-Diffusion-Architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Predict1-Diffusion-Architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Predict2.5-Architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Predict2.5-Architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Predict2.5-PredictionSamples.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Predict2.5-PredictionSamples.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Predict2.5-VideoCurationPipeline.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Predict2.5-VideoCurationPipeline.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Tokenizer-Architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Tokenizer-Architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos-Training-Paradigm.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos-Training-Paradigm.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos3-Fig1-UnifiedBackbone.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos3-Fig1-UnifiedBackbone.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos3-Fig2-TrainingParadigm.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos3-Fig2-TrainingParadigm.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos3-Fig3-UnifiedActionRepresentation.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos3-Fig3-UnifiedActionRepresentation.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos3-Fig4-ActionModes.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos3-Fig4-ActionModes.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Cosmos3-Fig5-MoTArchitecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Cosmos3-Fig5-MoTArchitecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/CosmosReason1-CommonSenseOntology.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/CosmosReason1-CommonSenseOntology.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/CosmosTransfer1-AdaptiveControlNet.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/CosmosTransfer1-AdaptiveControlNet.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/DreamZero-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/DreamZero-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/DreamZero-unseen-task-results.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/DreamZero-unseen-task-results.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/DreamerV3-benchmark-summary.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/DreamerV3-benchmark-summary.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/DreamerV3-training-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/DreamerV3-training-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Genie-LAM.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Genie-LAM.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Genie-ST-transformer.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Genie-ST-transformer.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Genie-components.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Genie-components.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Genie-robotics-actions.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Genie-robotics-actions.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-3DGS-Comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-3DGS-Comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-Applications.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-Applications.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-In-the-Wild.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-In-the-Wild.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-Method-Overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-Method-Overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-Overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-Overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Lyra2-Video-Comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Lyra2-Video-Comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/MarbleWorldModelV4.svg",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/MarbleWorldModelV4.svg",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Qwen-RobotWorld-EWK-dataset-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Qwen-RobotWorld-EWK-dataset-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Qwen-RobotWorld-Scene2Robot.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Qwen-RobotWorld-Scene2Robot.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Qwen-RobotWorld-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Qwen-RobotWorld-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/SANA-WM-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/SANA-WM-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/SANA-WM-data-pipeline.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/SANA-WM-data-pipeline.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/SANA-WM-efficiency-ablation.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/SANA-WM-efficiency-ablation.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/SANA-WM-qualitative-comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/SANA-WM-qualitative-comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/SANA-WM-teaser.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/SANA-WM-teaser.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Survey-Fig2-Timeline.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Survey-Fig2-Timeline.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Survey-Fig3-Paradigms.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Survey-Fig3-Paradigms.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/TD-MPC2-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/TD-MPC2-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/VLA-World-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/VLA-World-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/VLA-World-paradigm-comparison.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/VLA-World-paradigm-comparison.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/VLA-World-visualization.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/VLA-World-visualization.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Wan-I2V-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Wan-I2V-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Wan-T2V-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Wan-T2V-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Wan-VACE-editing-framework.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Wan-VACE-editing-framework.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Wan-VAE-framework.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Wan-VAE-framework.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/Wan-transformer-block.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/Wan-transformer-block.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WoVR-hallucination-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WoVR-hallucination-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WoVR-pipeline.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WoVR-pipeline.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WoVR-visualization-results.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WoVR-visualization-results.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldModels-flow-diagram.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldModels-flow-diagram.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldModels-vmc-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldModels-vmc-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldVLA-architecture.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldVLA-architecture.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldVLA-attention-mask.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldVLA-attention-mask.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldVLA-overview.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldVLA-overview.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldVLA-visualization-action.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldVLA-visualization-action.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/WorldVLA-visualization-world.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/WorldVLA-visualization-world.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/World_Planner.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/World_Planner.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/i2w-living-room.jpg",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/i2w-living-room.jpg",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/i2w-mushroom-forest.jpg",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/i2w-mushroom-forest.jpg",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/janus-training.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/janus-training.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/streaming-3dgs-worlds.jpg",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/streaming-3dgs-worlds.jpg",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/wmandvla.png",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/wmandvla.png",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    },
+    {
+      "path": "/images/wm/world-models-survey-intro.webp",
+      "source": "https://github.com/TingdeLiu/tingdeliu.github.io/blob/969637c4346766db02c3edcf7ff550f5dd15fb95/images/wm/world-models-survey-intro.webp",
+      "note": "从来源站点文章引用的配图；版权归原论文作者及出版方。"
+    }
+  ]
+}

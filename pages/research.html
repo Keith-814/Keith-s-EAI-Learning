@@ -1,0 +1,10 @@
+---
+layout: page
+title: 研究笔记
+permalink: /research/
+editorial: true
+research_index: true
+portrait: false
+---
+{% assign research_entries = site.posts | where_exp: 'item', 'item.categories contains "research"' | sort: 'date' | reverse %}
+{% include research-index.html %}

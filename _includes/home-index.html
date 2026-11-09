@@ -1,0 +1,68 @@
+{% include locale.html %}
+{% assign label = 'zh' %}
+{% assign lookup = 'url' %}
+{% assign blog_url = '/blog/' %}
+{% if page_lang == 'en' %}
+  {% assign label = 'en' %}
+  {% assign lookup = 'source_url' %}
+  {% assign blog_url = '/en/blog/' %}
+{% endif %}
+{% assign total = 0 %}
+{% assign left = '' %}
+{% assign right = '' %}
+{% for domain in site.data.home_tree %}
+  {% assign count = 0 %}
+  {% capture branches %}
+    {% for branch in domain.branches %}
+      {% capture articles %}
+        {% for reading in branch.readings %}
+          {% assign path = reading.slug | prepend: '/' | append: '/' %}
+          {% assign post = home_entries | where: lookup, path | first %}
+          {% if post %}
+            {% assign count = count | plus: 1 %}
+            <li><a data-tree-article href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {% assign articles = articles | strip %}
+      {% if articles != empty %}
+        <p class="home-branch">{{ branch[label] | escape }}</p><ul>{{ articles }}</ul>
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+  {% if count > 0 %}
+    {% assign total = total | plus: count %}
+    {% capture section %}<section class="home-domain"><h3>{{ domain[label] }} <span>{{ count }}</span></h3>{{ branches }}</section>{% endcapture %}
+    {% if forloop.first %}{% assign left = section %}{% else %}{% assign right = right | append: section %}{% endif %}
+  {% endif %}
+{% endfor %}
+{% assign weekly = home_entries | where_exp: 'item', 'item.categories contains "weekly"' | sort: 'url' | reverse %}
+{% assign notes = home_entries | where_exp: 'item', 'item.categories contains "blog"' | sort: 'date' | reverse %}
+{% assign latest = weekly | first %}
+<div class="home-map">
+  <header class="home-hero">
+    <div>
+      <h1>{% if label == 'en' %}Embodied AI research notes{% else %}具身智能研究笔记{% endif %}</h1>
+      <p class="home-lede">{% if label == 'en' %}Surveys and paper readings on VLN, VLA and robot AI, plus a weekly embodied navigation digest.{% else %}从 VLA 与世界模型出发，梳理 2023 年以来的具身智能研究。{% endif %}</p>
+      {% if latest %}
+      <a class="home-latest" href="{{ latest.url | relative_url }}"><span>{% if label == 'en' %}Latest{% else %}最新{% endif %}</span>{% if label == 'en' %}Navigation digest{% else %}具身导航周报{% endif %} {% include weekly-range.html title=latest.title %} →</a>
+      {% endif %}
+    </div>
+    {% include language-switch.html site=true %}
+  </header>
+  <h2 class="home-section">{% if label == 'en' %}Research map{% else %}研究地图{% endif %} <span>{% if label == 'en' %}{{ total }} articles{% else %}{{ total }} 篇{% endif %}</span></h2>
+  <div class="home-grid">
+    <div>{{ left }}</div>
+    <div>{{ right }}</div>
+  </div>
+
+  <div class="learning-path">
+    <a href="{{ '/timeline/' | relative_url }}"><span>01 / 历史脉络</span><strong>发展时间线 →</strong><p>逐步连接 2023 年以来的代表工作与研究问题。</p></a>
+    <a href="{{ '/blog/' | relative_url }}"><span>02 / 持续积累</span><strong>学习记录 →</strong><p>保存阅读中的问题、比较与阶段性判断。</p></a>
+  </div>
+  <p class="home-source">当前两篇综述转载自 <a href="https://tingdeliu.github.io/">Tingde Liu 的研究笔记</a>，原作者、许可与来源见文章页。</p>
+  <div class="home-grid home-feeds">
+    {% include home-feed.html entries=weekly category='weekly' url=blog_url %}
+    {% include home-feed.html entries=notes category='notes' url=blog_url %}
+  </div>
+</div>

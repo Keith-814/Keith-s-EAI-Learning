@@ -1,0 +1,18 @@
+<head>
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.name | escape }}</title>
+  {% include meta.html %}
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  <link rel="icon" href="{{ '/assets/robot.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/learning.css' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="{{ '/feed.xml' | relative_url }}">
+  <script src="{{ '/assets/js/gift-star.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/footer-field.js' | relative_url }}" defer></script>
+  {% if page.research_index %}<script src="{{ '/assets/js/research-index.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.blog_index %}<script src="{{ '/assets/js/blog-index.js' | relative_url }}" defer></script>{% endif %}
+  {% if page.vla_survey %}<link rel="stylesheet" href="{{ '/assets/css/vla-survey.css' | relative_url }}">{% endif %}
+  {% if content contains '$' or content contains '\(' %}
+  <script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  {% endif %}
+</head>

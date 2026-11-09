@@ -1,0 +1,14 @@
+- zh: 动作策略
+  en: Action policies
+  branches:
+    - zh: 视觉 · 语言 · 动作
+      en: Vision · Language · Action
+      readings:
+        - {slug: VLA-Survey}
+- zh: 预测与规划
+  en: Prediction and planning
+  branches:
+    - zh: 世界模型
+      en: World models
+      readings:
+        - {slug: World-Models-Survey}

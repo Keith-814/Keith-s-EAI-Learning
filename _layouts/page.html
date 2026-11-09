@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% include locale.html %}
+<article class="page">
+
+  {% unless page.editorial %}{% include page-heading.html %}{% endunless %}
+
+  <div class="entry">
+    {{ content }}
+  </div>
+</article>

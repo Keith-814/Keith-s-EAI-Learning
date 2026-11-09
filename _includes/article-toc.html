@@ -1,0 +1,30 @@
+<aside class="article-toc" id="article-toc" aria-label="{{ ui.article_navigation }}" aria-hidden="true"{% if page.toc_expand %} data-toc-expand="{{ page.toc_expand }}"{% endif %}>
+  <div class="article-toc-nav">
+    <nav aria-label="站点导航">
+      <a href="{{ '/' | relative_url }}">首页</a>
+      <a href="{{ '/research/' | relative_url }}">研究</a>
+      <a href="{{ '/timeline/' | relative_url }}">时间线</a>
+      <a class="article-toc-star" href="https://github.com/{{ site.repository }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+    <button class="article-toc-close" type="button" aria-label="{{ ui.close_contents }}">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6.7 5.3 12 12-1.4 1.4-12-12 1.4-1.4Zm10.6 0 1.4 1.4-12 12-1.4-1.4 12-12Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="article-toc-heading">
+    <span>{{ ui.contents }}</span>
+    <span class="article-toc-depth">{% if page_lang == 'en' %}On this page{% else %}本文导航{% endif %}</span>
+  </div>
+
+  <nav class="article-toc-scroll" aria-label="{{ ui.article_contents }}">
+    {% assign article_toc_depth = page.toc_depth | default: 3 %}
+    {% include toc.html html=content sanitize=true h_min=1 h_max=article_toc_depth class="article-toc-list" id="article-toc-list" item_class="toc-level-%level%" anchor_class="article-toc-link" %}
+  </nav>
+  <div class="article-reading-status">
+    <div class="article-reading-meter" aria-hidden="true"><span></span></div>
+    <span class="article-reading-percent">0%</span>
+    <span>{% if page_lang == 'en' %}read{% else %}已阅读{% endif %}</span>
+  </div>
+</aside>
