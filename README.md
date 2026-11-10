@@ -2,7 +2,7 @@
 
 具身智能学习与研究笔记，关注 **2023 年以来**的 VLM、VLA、具身智能体与世界模型。
 
-[网站](https://keith-814.github.io/Keith-s-EAI-Learning/) · [研究笔记](https://keith-814.github.io/Keith-s-EAI-Learning/research/)
+[网站](https://keith-814.github.io/Keith-s-EAI-Learning/) 
 
 ## 当前内容
 
