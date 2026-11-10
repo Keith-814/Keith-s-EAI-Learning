@@ -1,7 +1,3 @@
 {% if page.original_url %}
-<aside class="source-note" aria-label="转载来源">
-  <strong>转载学习资料 · 原作者 {{ page.author }}</strong>
-  <p>来源：<a href="{{ page.original_url }}" target="_blank" rel="noopener noreferrer">{{ page.title }}（原站）↗</a> · <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> · 导入于 {{ page.imported_at }}。</p>
-  <p>正文保留；仅适配站内链接、图片路径和展示。论文配图权利归原作者及出版方。此处保存的是来源版本，阅读时请回查原论文。</p>
-</aside>
+<p class="source-note">资料来源：<a href="{{ page.original_url }}" target="_blank" rel="noopener noreferrer">{{ page.author | escape }} · {{ page.title | escape }}</a> · <a href="https://creativecommons.org/licenses/by/4.0/deed.zh">CC BY 4.0</a> · 导入于 {{ page.imported_at }}。已适配站内链接、图片路径和展示；配图权利归原作者及出版方。</p>
 {% endif %}

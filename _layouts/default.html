@@ -6,7 +6,7 @@
   {% assign has_article_toc = true %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="{{ page_lang }}"{% if is_article_canvas %} class="article-document"{% endif %}>
+<html lang="{{ page_lang }}" data-theme="light"{% if is_article_canvas %} class="article-document"{% endif %}>
   {% include head.html %}
   <body class="{% if is_article_canvas %}no-sidebar article-page{% endif %}{% if page.home_index %} blog-index-page home-index-page{% elsif page.blog_index %} blog-index-page{% elsif page.research_index %} research-index-page{% elsif page.project_index %} project-index-page{% elsif page.editorial %} about-page{% endif %}{% if has_article_toc %} has-article-toc{% endif %}">
     <!-- 只在非文章页面显示导航侧边栏 -->

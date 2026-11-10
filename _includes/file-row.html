@@ -1,0 +1,13 @@
+{% assign row_post = include.post %}
+{% assign row_category = '学习记录' %}
+{% if row_post.categories contains 'research' %}
+  {% assign row_category = '研究' %}
+  {% for group in site.data.research_groups %}
+    {% if group.slugs contains row_post.slug %}{% assign row_category = group.zh %}{% break %}{% endif %}
+  {% endfor %}
+{% endif %}
+<a class="file-row" href="{{ row_post.url | relative_url }}" title="{{ row_post.title | escape }}"{% if include.group %} data-research-row data-research-group="{{ include.group | escape }}"{% endif %}>
+  <span class="file-row-title">{{ row_post.title | escape }}</span>
+  <span class="file-row-category">{{ row_category | escape }}</span>
+  <time datetime="{{ row_post.date | date_to_xmlschema }}">{{ row_post.date | date: '%Y-%m-%d' }}</time>
+</a>

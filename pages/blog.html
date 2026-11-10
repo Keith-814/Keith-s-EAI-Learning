@@ -7,11 +7,11 @@ blog_index: true
 portrait: false
 ---
 <section class="blog-library">
-  <header class="page-heading"><div><h1>学习记录</h1><p class="blog-intro">记录读过什么、理解了什么，以及还没想清楚的问题。</p></div></header>
+  <header class="page-heading"><div><h1>学习记录</h1></div></header>
   {% assign notes = site.posts | where_exp: 'item', 'item.categories contains "blog"' %}
   {% if notes.size > 0 %}
-  <div class="blog-index-content">{% for post in notes %}<a class="blog-row" href="{{ post.url | relative_url }}"><time>{{ post.date | date: '%Y-%m-%d' }}</time><h2>{{ post.title | escape }}</h2></a>{% endfor %}</div>
+  <div class="blog-index-content file-list">{% for post in notes %}{% include file-row.html post=post %}{% endfor %}</div>
   {% else %}
-  <div class="empty-state"><h2>从第一篇阅读记录开始</h2><p>这里将保存论文精读、方法对比、疑问和阶段总结。</p><a href="{{ '/research/' | relative_url }}">先阅读两篇综述 →</a></div>
+  <div class="empty-state"><p>暂无学习记录。</p></div>
   {% endif %}
 </section>

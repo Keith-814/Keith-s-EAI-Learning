@@ -1,17 +1,17 @@
 // Shared tokens keep navigation, articles and syntax colors in the same theme.
 @mixin light-theme {
   color-scheme: light;
-  --paper: #faf9f6;
-  --panel: #f0efea;
-  --ink: #292a25;
-  --prose: #45463f;
-  --muted: #6d6e64;
-  --rule: #dcdcd3;
-  --accent: #a44c2c;
-  --selection: #f0d8c7;
-  --code-bg: #f0efe9;
-  --code-inline: #914329;
-  --score-fill: #efdbc7;
+  --paper: #ffffff;
+  --panel: #f6f8fb;
+  --ink: #1e293b;
+  --prose: #475569;
+  --muted: #64748b;
+  --rule: #e5eaf0;
+  --accent: #3568a5;
+  --selection: #dceafa;
+  --code-bg: #f4f7fb;
+  --code-inline: #385f8f;
+  --score-fill: #dceafa;
   --syntax-comment: #6b7162;
   --syntax-keyword: #794e85;
   --syntax-string: #456334;
@@ -19,7 +19,7 @@
   --syntax-name: #28656b;
   --syntax-error: #a33b32;
   --theme-color: #696b60;
-  --theme-hover-color: #45463f;
+  --theme-hover-color: #475569;
 }
 
 :root { @include light-theme; }
