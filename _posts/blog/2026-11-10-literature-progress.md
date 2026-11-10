@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "文献调研进度"
+title: "文献调研记录汇总"
 date: 2026-11-10
 author: Keith
 categories: blog
@@ -9,52 +9,103 @@ toc: true
 
 # 文献调研进度汇报
 
-这组文献的主线可以概括为：先解决机器人如何生成连续、精细且多模态的动作（Diffusion Policy、FAST、ACT），再发展视觉语言动作模型的通用控制能力（RT-1、RT-2、OpenVLA、π₀、π₀.₅），最后进一步关注长时序规划、环境预测和零样本执行（Reflective Planning、V-JEPA 2、World Action Models）。
+这组文献的主线可以概括为：先通过 Diffusion Policy 和 ACT 学习连续、精细的机器人动作；再以 RT-1、RT-2、FAST 和 OpenVLA 发展视觉语言动作模型的多任务控制、动作表示和开源能力；随后由 π₀、π₀.₅ 将视觉语言理解与连续动作生成、开放世界泛化结合起来；最后进一步研究长时序规划、约束执行、环境预测和零样本策略。
 
-## 1. π₀.₅: a Vision-Language-Action Model with Open-World Generalization
-
-该工作解决了视觉语言动作模型在陌生物体、陌生环境和新任务上的泛化能力不足问题。方法上，它在 π₀ 的流匹配动作生成基础上，引入高层语义或子目标规划与低层连续控制，并混合互联网视觉语言数据和多机器人数据进行训练，从而提升开放世界泛化能力。
-
-## 2. π₀: A Vision-Language-Action Flow Model for General Robot Control
-
-该工作解决了不同机器人、不同任务之间控制策略难以统一的问题。它采用预训练视觉语言模型结合动作专家模块的结构，通过流匹配直接生成连续动作序列，并利用多种机器人数据进行联合训练，实现通用机器人控制。
-
-## 3. Diffusion Policy: Visuomotor Policy Learning via Action Diffusion
+## 1. Diffusion Policy: Visuomotor Policy Learning via Action Diffusion
 
 该工作针对机器人动作具有多峰分布、精细操作难以建模的问题，提出将动作序列建模为条件扩散过程。策略根据当前视觉观测，通过逐步去噪生成一段未来动作，再采用滚动执行方式完成操作，因此能够处理复杂且不确定的动作分布。
 
-## 4. FAST: Efficient Action Tokenization for Vision-Language-Action Models
-
-该工作解决了视觉语言动作模型中连续动作离散化后序列过长、推理效率低的问题。它先将动作序列转换到频域，再进行量化和压缩编码，把一段连续动作表示为较少的离散 token，从而降低训练和推理成本。
-
-## 5. Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
+## 2. Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
 
 该工作解决了双臂精细操作数据采集成本高、硬件难以普及的问题。作者搭建了低成本的 ALOHA 双臂遥操作平台，并使用 ACT 动作分块模型和时间集成方法，从少量示范中学习精细的双臂协同操作。
 
-## 6. OpenVLA: An Open-Source Vision-Language-Action Model
+## 3. Diffusion Policy 与 ACT 的区别和联系
+
+两者都通过视觉观测预测未来动作，但侧重点不同。Diffusion Policy 更擅长表达多峰、复杂的动作分布，ACT 则通过动作分块和时间集成减少预测负担，更适合从较少示范中学习精细的双臂操作。二者可以看作连续动作生成的两种互补思路。
+
+## 4. RT-1: Robotics Transformer for Real-World Control at Scale
+
+RT-1 要解决的是机器人策略难以随任务和数据规模扩大而保持稳定的问题。它希望用一个模型，根据自然语言指令和相机观测完成抓取、放置、推拉、开关物体等多种真实操作。
+
+RT-1 将机器人控制建模为序列预测问题。模型利用视觉编码器和 TokenLearner 提取、压缩图像信息，再由 Transformer 综合图像、语言和历史观测。机械臂位姿、夹爪状态等连续动作被量化为离散 action token，模型在每个控制时刻预测当前动作，执行后再根据新观测继续修正。
+
+研究者使用约 13 万条真实机器人轨迹进行多任务训练，覆盖多个机器人、任务和环境。RT-1 证明了统一的视觉—语言—动作接口能够支持大规模真实机器人控制，并在已覆盖任务和外观变化上取得较好的稳定性。它的局限是依赖机器人示范数据，对互联网常识和陌生概念利用不足；动作离散化也会限制精细控制能力。
+
+## 5. RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
+
+RT-2 进一步解决了机器人数据难以覆盖互联网知识的问题。它希望利用视觉语言模型已经学到的物体类别、用途和常识，帮助机器人理解陌生物体、抽象概念和新的语言指令。
+
+RT-2 的核心做法是“动作即语言”：把机械臂位姿、夹爪状态等连续动作量化并编码成语言模型可以预测的 token。训练时，将网页图像—文本数据与机器人图像—动作数据放在同一个序列预测框架中联合微调，使模型把视觉语言知识连接到真实机器人动作。
+
+因此，RT-2 在陌生物体识别、简单推理和零样本或组合泛化方面比 RT-1 更强。但互联网知识主要帮助模型判断“做什么”，不能自动解决接触动力学、碰撞规避和安全控制问题；较大的模型和动作 token 化也会增加推理成本，并影响精细操作。
+
+## 6. RT-1 与 RT-2 的区别和改进
+
+RT-1 和 RT-2 都把视觉、语言和动作放到一个统一模型中，但关注重点不同：RT-1 主要解决多任务机器人控制的规模化问题，RT-2 则进一步解决互联网语义知识向机器人动作的迁移问题。
+
+| 对比维度 | RT-1 | RT-2 |
+| --- | --- | --- |
+| 首要问题 | 多任务、多场景控制如何规模化训练和部署 | 互联网语义知识如何落到机器人动作上 |
+| 模型骨干 | 视觉编码器、语言条件、TokenLearner 和 Transformer 策略 | 预训练视觉语言模型与机器人动作预测头 |
+| 输入与训练形式 | 图像、历史观测和机器人任务指令 | 图像和自然语言指令；兼容网页文本与机器人动作序列 |
+| 训练数据 | 以大规模真实机器人轨迹为中心 | 互联网视觉语言数据与机器人轨迹联合微调 |
+| 动作接口 | 各连续动作维度分别量化为离散 action token | 将量化动作映射到视觉语言模型词表中的 token |
+| 训练目标 | 机器人动作 token 分类预测 | 统一的 next-token prediction |
+| 泛化来源 | 多机器人、多任务数据带来的正迁移 | 机器人数据与互联网语义知识的共同迁移 |
+| 主要优势 | 控制效率较高，已覆盖任务稳定 | 陌生物体识别、抽象语义和组合泛化更强 |
+| 主要代价 | 受机器人数据覆盖范围限制，常识来源有限 | 模型规模和推理成本更高，动作精度与延迟仍受 token 化影响 |
+
+相对于 RT-1，RT-2 的改进主要有三点：引入互联网视觉语言知识，统一文本和动作的 token 表示，并把评价重点扩展到陌生物体、抽象概念和新指令下的组合泛化。
+
+总体来看，RT-1 更偏向稳定、高效的机器人控制，RT-2 更偏向语义理解和开放世界泛化。RT-2 扩大了机器人能够理解和选择的任务范围，但仍需要机器人数据和低层控制机制来保证动作的精确与安全。
+
+## 7. FAST: Efficient Action Tokenization for Vision-Language-Action Models
+
+该工作解决了视觉语言动作模型中连续动作离散化后序列过长、推理效率低的问题。它先将动作序列转换到频域，再进行量化和压缩编码，把一段连续动作表示为较少的离散 token，从而降低训练和推理成本。
+
+## 8. OpenVLA: An Open-Source Vision-Language-Action Model
 
 该工作解决了视觉语言动作模型难以复现、难以扩展和缺少开源基线的问题。它基于预训练视觉语言模型，在大规模机器人示范数据上进行微调，将机器人动作离散成 token 进行预测，并公开模型、训练方法和代码，支持多种机器人任务。
 
-## 7. Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation
+## 9. FAST 与 OpenVLA 的区别和联系
+
+OpenVLA 使用离散 token 预测机器人动作，FAST 则针对这类表示带来的序列过长问题进行频域压缩和量化。因此，OpenVLA 代表视觉语言动作模型的开源实现，FAST 更像是可以配合使用的动作表示和推理效率优化方法。
+
+## 10. π₀: A Vision-Language-Action Flow Model for General Robot Control
+
+π₀ 主要解决不同机器人、不同任务之间难以使用同一套控制策略的问题。它将预训练视觉语言模型与动作专家模块结合，通过流匹配生成连续动作序列，并用多种机器人的数据进行联合训练。这样，模型可以在保留语言和视觉理解能力的同时，直接输出更平滑、更适合精细操作的机器人动作。
+
+## 11. π₀.₅: a Vision-Language-Action Model with Open-World Generalization
+
+π₀.₅ 主要解决视觉语言动作模型在陌生物体、陌生环境和新任务上的泛化能力不足问题。它在 π₀ 的连续动作生成基础上，加入高层语义理解和子目标规划，再由低层控制器生成具体动作。同时，模型结合互联网视觉语言数据和多机器人轨迹进行训练，因此能够利用更广泛的物体知识和任务经验，提升开放世界中的泛化能力。
+
+## 12. π₀ 与 π₀.₅ 的关系和改进
+
+π₀ 和 π₀.₅ 都使用视觉语言模型理解任务，并生成连续机器人动作。π₀ 重点解决不同机器人、不同任务之间的统一控制问题，π₀.₅ 则在此基础上进一步加入语义规划和互联网视觉语言知识，重点提升陌生物体、开放环境和新任务上的泛化能力。
+
+因此，π₀ 更强调连续动作生成和精细控制，π₀.₅ 更强调开放世界理解和任务泛化。π₀.₅ 的能力更强，但模型和训练流程也更复杂，对数据和计算资源的要求更高。
+
+## 13. Reflective Planning: Vision-Language Models for Multi-Stage Long-Horizon Robotic Manipulation
 
 该工作解决了长时序、多阶段机器人任务中计划容易出错且错误会持续累积的问题。它利用视觉语言模型生成任务计划，并在执行后根据视觉反馈进行反思、错误诊断和局部重新规划，从而提高复杂任务的成功率。
 
-## 8. RT-1: Robotics Transformer for Real-World Control at Scale
+## 14. ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation
 
-该工作解决了机器人策略难以随着任务数量和数据规模扩大而保持稳定性能的问题。它使用视觉编码器和 Transformer，将图像、语言指令及历史观测输入模型，并输出离散化的机器人动作，通过大规模真实机器人数据训练得到通用控制策略。
+该工作解决了自然语言指令难以转化为精确、可执行的多阶段机器人操作约束的问题。它用物体上的三维语义关键点表示操作对象，结合视觉基础模型和视觉语言模型，自动生成描述关键点空间关系的子目标约束与路径约束，再通过分层优化求解目标位姿和运动轨迹，并根据视觉反馈持续更新，实现对新物体和环境变化的泛化。
 
-## 9. RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
+## 15. Reflective Planning 与 ReKep 的区别和联系
 
-该工作解决了视觉语言模型中的互联网知识难以迁移到机器人控制的问题。它将机器人动作表示为语言 token，并把视觉语言模型的网页知识与机器人轨迹联合微调，使模型能够根据语义知识进行物体识别、抽象推理和零样本操作。
+两者都关注长时序、多阶段操作，但作用层次不同。Reflective Planning 主要在执行后检查错误并重新安排任务步骤，侧重任务级纠错；ReKep 则把语言指令转化为空间和时间约束，再求解具体轨迹，侧重几何约束执行。二者可以结合使用。
 
-## 10. V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
+## 16. V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
 
 该工作解决了世界模型依赖人工标注、难以同时支持视频理解、未来预测和机器人规划的问题。它通过自监督学习在视频数据上预测未来的潜在表示，而不是直接预测像素，并进一步结合动作信息进行环境预测和模型预测控制。
 
-## 11. World Action Models are Zero-shot Policies
+## 17. World Action Models are Zero-shot Policies
 
 该工作研究如何直接利用世界模型完成机器人决策，减少针对每个任务单独训练策略的需求。其方法是让模型预测不同候选动作导致的未来状态，再根据目标达成程度对动作进行评估和选择，从而通过规划实现零样本策略执行。
 
-## 12. ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation
+## 18. V-JEPA 2 与 World Action Models 的区别和联系
 
-该工作解决了自然语言指令难以转化为精确、可执行的多阶段机器人操作约束的问题。它用物体上的三维语义关键点表示操作对象，结合视觉基础模型和视觉语言模型，自动生成描述关键点空间关系的子目标约束与路径约束，再通过分层优化求解目标位姿和运动轨迹，并根据视觉反馈持续更新，实现对新物体和环境变化的泛化。
+V-JEPA 2 更偏向学习能够理解视频、预测未来状态的世界模型；World Action Models 则进一步利用世界模型比较不同动作的结果，并选择更有利于完成任务的动作。二者体现了从环境建模和未来预测，到零样本决策和规划的连续关系，但不能简单认为 WAM 直接继承了 V-JEPA 2 的具体模型。
+
