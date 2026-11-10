@@ -54,3 +54,7 @@ toc: true
 ## 11. World Action Models are Zero-shot Policies
 
 该工作研究如何直接利用世界模型完成机器人决策，减少针对每个任务单独训练策略的需求。其方法是让模型预测不同候选动作导致的未来状态，再根据目标达成程度对动作进行评估和选择，从而通过规划实现零样本策略执行。
+
+## 12. ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation
+
+该工作解决了自然语言指令难以转化为精确、可执行的多阶段机器人操作约束的问题。它用物体上的三维语义关键点表示操作对象，结合视觉基础模型和视觉语言模型，自动生成描述关键点空间关系的子目标约束与路径约束，再通过分层优化求解目标位姿和运动轨迹，并根据视觉反馈持续更新，实现对新物体和环境变化的泛化。
