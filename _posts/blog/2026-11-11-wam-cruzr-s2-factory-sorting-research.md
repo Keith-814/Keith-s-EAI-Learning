@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cruzr S2 真机测试：高泛化机器人方法与世界模型复现路线"
+title: "Cruzr S2 真机测试：面向强泛化的机器人方法选择与复现路线"
 date: 2026-11-11
 author: Keith
 categories: blog
