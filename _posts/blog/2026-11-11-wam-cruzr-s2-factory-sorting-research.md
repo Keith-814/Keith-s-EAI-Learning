@@ -4,9 +4,9 @@ title: "Cruzr S2 真机测试：面向强泛化的机器人方法选择与复现
 date: 2026-11-11
 author: Keith
 categories: blog
-tags: [世界模型, DreamerV3, DreamZero, GR00T, VLA, WAM]
+tags: [世界模型, DreamerV3, DreamZero, GR00T, Show-Harness, VLM, VLA, WAM]
 toc: true
-excerpt: "围绕 Cruzr S2 流水线分拣真机测试，梳理 DreamerV3、DreamZero 与 GR00T 的主要框架、优缺点及复现路线。"
+excerpt: "围绕 Cruzr S2 流水线分拣真机测试，梳理 DreamerV3、DreamZero、GR00T 与 Show-Harness 的主要框架、优缺点及复现路线。"
 ---
 
 ## 当前场景与条件
@@ -66,3 +66,21 @@ excerpt: "围绕 Cruzr S2 流水线分拣真机测试，梳理 DreamerV3、Dream
 **复现流程：** 固定 N1.5 代码版本并下载基础权重 → 跑通示例推理 → 核实厂商同平台模型包及夹爪兼容性 → 对齐相机、关节顺序、单位和夹爪动作，采集并转换示范数据 → 配置本体并微调 → 离线评估与 shadow 测试 → 单阶段低速真机验证 → 测试未参与训练的工件、位置、光照和布局，分别记录成功率。
 
 [官方 N1.5 代码与复现说明](https://github.com/NVIDIA/Isaac-GR00T/tree/n1.5-release) · [基础权重](https://huggingface.co/nvidia/GR00T-N1.5-3B) · [Cruzr S2 第三方适配与验证记录][cruzr-groot-guide]
+
+## Show-Harness：Just a VLM Agent Can Play Robots
+
+**主要框架：** Show-Harness（Just a VLM Agent Can Play Robots）提供紧凑的具身接口：VLM 根据观测与指令选择离散、增量式的语义动作单元，再由本体专用 interpreter 确定性地转换为实际运动，VLM 直接负责每一步物理决策。它属于 VLM 智能体控制路线，不是预测未来视频的 WAM。官方提供两种模式：前沿 VLM 无需机器人专用训练的零样本控制，以及小型 VLM 在 GUMI 示范上进行 LoRA 微调后逐步输出动作 token 的控制。GUMI 在浏览器中用按键或按钮操作机器人，记录可用于训练的观测—动作对；插件可补充多视角、本体状态、子任务规划、动作分块和失败恢复等能力。
+
+**对 Cruzr S2 的适配判断（工程建议，未经真机验证）：** 可将其列为先于大规模微调尝试的控制基线。官方 README 列出的本体包括 Franka、AgileX Piper 单/双臂及仿真环境，未列出 Cruzr S2；零样本控制仍需本体适配。建议先保留官方面向模型的动作词表和提示，只实现 Cruzr S2 interpreter，核对末端增量的坐标系、单位、步长、旋转约定和夹爪映射，由 SDK 侧完成逆运动学、轨迹执行与限幅。将“抓取—移到扫码位—放置”作为任务阶段，扫码解码与目标位置映射继续独立实现。若另加整段抓取或扫码技能，应单独标为工程扩展，不能算作官方逐步动作接口的原样复现。
+
+**优点：** 高层 VLM 不必知道 Cruzr S2 的关节排列；离散动作接口便于记录、回放、审计和人工接管；可以先冻结 VLM，只替换本体 interpreter，快速比较不同模型在新工件、位置和布局上的泛化。对当前任务，还可以把扫码位姿和放置区域做成受约束的技能原语，降低 VLM 直接生成危险连续动作的风险。
+
+**局限与风险：** 语义动作选择正确不代表逆运动学、视觉标定、夹爪接触和扫码姿态一定成功；动作步长、提示模板和 interpreter 的边界会影响结果。流水线运动还会放大 VLM 推理延迟，需测量端到端延迟与工件位移。若反复根据测试工件调整动作原语或提示，会高估泛化能力。公开实验不能视为 Cruzr S2 的真机结果；官方小模型和适配器的训练成本也不能直接外推为本平台的成本。
+
+**所需条件：** 官方将基础 harness、vLLM 服务和仿真分别置于独立环境。可用 `bash scripts/setup.sh base` 建立基础环境，再通过 OpenAI 兼容端点访问托管或本地 VLM；使用外部服务时，harness 主机无需运行本地 vLLM。自托管模型的 GPU/显存需求按所选底座与服务配置核对。Cruzr S2 另需实时相机、状态读取、机械臂与夹爪控制权限、标定和新 interpreter，不能直接套用 Franka/Piper 的硬件安装参数。
+
+**复现难度：** 高层 demo 为中等，真机闭环为中等偏高。第一阶段可不训练模型，用固定动作集合和安全 interpreter 在离线视频或 shadow 模式验证动作选择；第二阶段只开放单臂低速的 `pick → scan → place` 闭环；第三阶段再加入未见工件、位置、光照和遮挡，并记录每个语义动作的选择、执行耗时、失败类型和人工接管次数。
+
+**推荐复现流程：** 固定 Show-Harness 代码与提示版本并跑通官方示例 → 为 Cruzr S2 建立动作 schema、状态反馈和限幅 interpreter → 用录制视频检查 VLM 是否能稳定选择动作 → 接入 shadow 控制并验证关节、夹爪和急停链路 → 单阶段低速真机测试 → 在留出的工件、布局和光照上重复评测。与 GR00T 或 DreamZero 对比时，应保持相同的相机、目标集合、尝试次数和安全接管规则，并把高层决策成功率与最终抓放成功率分开报告。
+
+[论文（2026）](https://arxiv.org/abs/2609.10522) · [官方代码与复现说明](https://github.com/showlab/Show-Harness) · [项目主页](https://showlab.github.io/Show-Harness/) · [模型与 LoRA](https://huggingface.co/showlab/Show-Harness-VLMs) · [示范数据](https://huggingface.co/datasets/showlab/Show-Harness-Data)
