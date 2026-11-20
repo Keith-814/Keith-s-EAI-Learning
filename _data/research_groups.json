@@ -14,5 +14,13 @@
     "slugs": [
       "World-Models-Survey"
     ]
+  },
+  {
+    "id": "audio",
+    "zh": "声音 · 多模态具身",
+    "en": "Audio and multisensory robotics",
+    "slugs": [
+      "audio-embodied-intelligence-survey"
+    ]
   }
 ]
