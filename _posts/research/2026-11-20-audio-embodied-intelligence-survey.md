@@ -23,7 +23,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 这一类主要把声音作为输入或反馈，用于接触状态判断、目标选择、动作时机和任务意图推断。既包括直接输出动作的策略，也包括服务于操作的主动声学感知方法。
 
-### ManiWAV: Learning Robot Manipulation from In-the-Wild Audio-Visual Data（2024）
+### ManiWAV: Learning Robot Manipulation from In-the-Wild Audio-Visual Data（2024，CoRL）
 
 **解决的问题：** 视觉难以完整反映擦拭、翻动物体等操作中的接触状态，而传统机器人遥操作又限制了带声音示范的采集范围。
 
@@ -33,7 +33,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][maniwav] · [项目][maniwav-project] · [代码与数据][maniwav-code]。依据 v2 的方法与实验。
 
-### Hearing Touch: Audio-Visual Pretraining for Contact-Rich Manipulation（2024）
+### Hearing Touch: Audio-Visual Pretraining for Contact-Rich Manipulation（2024，ICRA）
 
 **解决的问题：** 接触丰富的操作需要细致反馈，但机器人接触音频示范有限，直接从少量数据学习声音表征较难。
 
@@ -45,7 +45,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][hearing-touch] · [项目][hearing-touch-project]。依据 v1 §III–IV、VI。
 
-### SonicSense: Object Perception from In-Hand Acoustic Vibration（2024）
+### SonicSense: Object Perception from In-Hand Acoustic Vibration（2024，CoRL）
 
 **解决的问题：** 被遮挡的内部状态、物体材料和局部形状难以仅凭外观判断，需要机器人主动交互来获取信息。
 
@@ -57,7 +57,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][sonicsense] · [项目][sonicsense-project]。依据 v2 摘要与官方项目说明。
 
-### Audio-VLA: Adding Contact Audio Perception to Vision-Language-Action Model for Robotic Manipulation（2025）
+### Audio-VLA: Adding Contact Audio Perception to Vision-Language-Action Model for Robotic Manipulation（2025，arXiv preprint）
 
 **解决的问题：** VLA 主要依赖视觉与语言，对碰撞、接触变化和操作完成过程的反馈感知不足，容易遗漏图像中不明显的动态信息。
 
@@ -67,7 +67,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][audio-vla]。依据 v1 §III–IV。
 
-### Towards the Vision-Sound-Language-Action Paradigm: The HEAR Framework for Sound-Centric Manipulation（2026）
+### Towards the Vision-Sound-Language-Action Paradigm: The HEAR Framework for Sound-Centric Manipulation（2026，IJRR）
 
 **解决的问题：** 提示音、碰撞声等短促信号可能在动作块执行期间出现并消失，机器人下一次更新策略时已经无法听到，导致漏响应或动作时机错误。
 
@@ -77,7 +77,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][hear] · [项目][hear-project] · [代码][hear-code] · [OpenX-Sound][openx-sound]。依据 v2 §3–6；OpenX-Sound 的声音为合成增强。
 
-### Listen Before Act: Audio-Conditioned Robot Manipulation with ListenVLA（2026）
+### Listen Before Act: Audio-Conditioned Robot Manipulation with ListenVLA（2026，arXiv preprint）
 
 **解决的问题：** 给 VLA 加入音频输入后，模型仍可能只依赖视觉或固定动作模式，缺少对声音变化与动作变化之间关系的明确学习。
 
@@ -87,7 +87,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][listenvla]。依据 v1 §III–IV；配套 LIBERO-Audio 包含八项任务、960 条示范。
 
-### OmniVLA: Physically-Grounded Multimodal VLA with Unified Multi-Sensor Perception for Robotic Manipulation（2025）
+### OmniVLA: Physically-Grounded Multimodal VLA with Unified Multi-Sensor Perception for Robotic Manipulation（2025，ICRA 2026）
 
 **解决的问题：** RGB 预训练 VLA 难以直接解释麦克风阵列、红外和毫米波等异构传感器信息，额外模态的机器人数据又较少。
 
@@ -99,7 +99,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][omnivla] · [代码][omnivla-code]。首次公开于 2025 年，依据 2026 年修订的 v3 §III–IV。
 
-### RoboOmni: Proactive Robot Manipulation in Omni-modal Context（2025）
+### RoboOmni: Proactive Robot Manipulation in Omni-modal Context（2025，arXiv preprint）
 
 **解决的问题：** 机器人通常等待明确指令，难以根据多人对话、环境声音和视觉上下文推断用户当前需要的操作。
 
@@ -125,7 +125,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 这一类把未来声音或未来视听观测作为显式预测目标，再用于机器人决策。阅读时应区分：预测是否以候选动作为条件、是否支持多步推演，以及预测结果是否真正参与部署决策。这里集中保留两篇直接相关的工作。
 
-### Learning Robot Manipulation from Audio World Models（2025）
+### Learning Robot Manipulation from Audio World Models（2025，arXiv preprint）
 
 **解决的问题：** 只利用当前声音难以提前判断操作过程的发展，例如根据注水声音变化决定何时停止，需要对未来声音进行预测。
 
@@ -137,7 +137,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][audio-wm]。依据 v1 §2–3。
 
-### Audio-Visual World Models: Learning Physically Grounded Multisensory Dynamics（2025）
+### Audio-Visual World Models: Learning Physically Grounded Multisensory Dynamics（2025，arXiv preprint）
 
 **解决的问题：** 视觉世界模型缺少对声音变化的预测，难以同时描述机器人移动后看到什么、听到什么，以及声源方向和声场如何改变。
 
@@ -153,7 +153,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 这一类关心数据是否同时包含声音、机器人观测与动作，以及评测能否排除“模型只看图像也能做对”的情况。真实同步录音、后期合成音轨与声场仿真承担不同作用，应分开判断。
 
-### RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot（2023）
+### RH20T: A Comprehensive Robotic Dataset for Learning Diverse Skills in One-Shot（2023，RSS Workshop on LTAMP）
 
 **解决的问题：** 机器人操作学习缺少同时包含真实声音、接触反馈和动作的多模态数据，难以研究声音与动作对齐及复杂接触技能。
 
@@ -163,7 +163,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][rh20t] · [项目与数据][rh20t-project] · [API][rh20t-api]。依据 v2 摘要与官方说明，未检查全量数据。
 
-### From Instruction to Event: Sound-Triggered Mobile Manipulation（STMM，2026）
+### From Instruction to Event: Sound-Triggered Mobile Manipulation（STMM，2026，arXiv preprint）
 
 **解决的问题：** 机器人通常接收完整动作指令，缺少从环境声音事件出发，完成导航、操作并消除事件声源的系统性任务与评测。
 
@@ -175,7 +175,7 @@ excerpt: "按声音驱动的动作策略、声音世界模型、声音具身数�
 
 [论文][stmm]。依据 v3 的任务、环境、方法、实验及附录；它也属于第一类的声音事件驱动策略。
 
-### SoundSpaces 2.0: A Simulation Platform for Visual-Acoustic Learning（2022，基础平台）
+### SoundSpaces 2.0: A Simulation Platform for Visual-Acoustic Learning（2022，arXiv preprint，基础平台）
 
 **解决的问题：** 视听导航需要随智能体位置、朝向和环境材质变化的声音，固定位置的预计算声音难以支持连续交互。
 
